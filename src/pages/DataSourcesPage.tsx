@@ -1,6 +1,7 @@
 import { FileText, Globe, ShieldAlert, Users, Brain } from "lucide-react";
 import DataSourceCard from "@/components/DataSourceCard";
 import GooseBadge from "@/components/GooseBadge";
+import AIPoweredByPanel from "@/components/AIPoweredByPanel";
 
 const sources = [
   {
@@ -68,6 +69,8 @@ export default function DataSourcesPage() {
           <DataSourceCard key={i} {...s} />
         ))}
       </div>
+
+      <AIPoweredByPanel />
 
       <p className="text-xs text-muted-foreground text-center">
         See EVIDENCE_LOG.md for full citations and methodology.
