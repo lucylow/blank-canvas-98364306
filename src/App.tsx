@@ -5,6 +5,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AppLayout from "./components/AppLayout";
+import HomePage from "./pages/Home";
+import MapPage from "./pages/MapPage";
+import NFTsPage from "./pages/NFTsPage";
+import DAOPage from "./pages/DAOPage";
+import ReportsPage from "./pages/ReportsPage";
+import ProfilePage from "./pages/ProfilePage";
+import DataSourcesPage from "./pages/DataSourcesPage";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +23,20 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Landing page */}
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
+          {/* App pages */}
+          <Route element={<AppLayout />}>
+            <Route path="/app" element={<HomePage />} />
+            <Route path="/map" element={<MapPage />} />
+            <Route path="/nfts" element={<NFTsPage />} />
+            <Route path="/dao" element={<DAOPage />} />
+            <Route path="/reports" element={<ReportsPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/data-sources" element={<DataSourcesPage />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
