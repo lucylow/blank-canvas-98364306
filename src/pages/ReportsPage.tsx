@@ -1,9 +1,10 @@
 import { useState } from "react";
 import ReportsList from "@/components/ReportsList";
+import SafetyReportTypes from "@/components/SafetyReportTypes";
 import { FileWarning, Plus, X, Send, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const reportTypes = ["Broken Light", "Suspicious Activity", "Unsafe Area", "Other"];
+const reportTypes = ["Broken / missing streetlight", "Harassment or catcalling reported", "Group loitering near route", "Unsafe shortcut / alley", "Area feels safe & active"];
 
 export default function ReportsPage() {
   const [showForm, setShowForm] = useState(false);
@@ -117,6 +118,8 @@ export default function ReportsPage() {
           </button>
         </form>
       )}
+
+      <SafetyReportTypes />
 
       <ReportsList />
     </div>
