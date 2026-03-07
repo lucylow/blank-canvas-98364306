@@ -97,7 +97,7 @@ export default function ARSimulation({ waypoints, onComplete, onCancel }: ARSimu
             <div className="bg-card/90 backdrop-blur-sm border border-accent-red rounded-xl px-6 py-4 text-center max-w-xs">
               <AlertTriangle className="w-8 h-8 text-accent-red mx-auto mb-2" />
               <p className="text-accent-red font-bold">You're off the safe path</p>
-              <p className="text-sm text-muted-foreground mt-1">Goose recommends returning to the green markers to stay in well-lit areas.</p>
+              <p className="text-sm text-muted-foreground mt-1">It's okay. Goose will help you get back to a safer path.</p>
             </div>
           </div>
         )}

@@ -1,6 +1,8 @@
 import { CheckCircle, XCircle, Award, Share2, Shield, Brain } from "lucide-react";
 import { useState } from "react";
 import GooseBadge from "@/components/GooseBadge";
+import AIPoweredByPanel from "@/components/AIPoweredByPanel";
+import GooseExplainDrawer from "@/components/GooseExplainDrawer";
 
 interface SuccessScreenProps {
   waypointsReached: number;
@@ -133,15 +135,21 @@ export default function SuccessScreen({
       </div>
 
       {/* Safety Score */}
-      <div className="bg-card rounded-xl border border-border p-6 flex items-center gap-4">
-        <div className="w-14 h-14 gradient-hero rounded-xl flex items-center justify-center">
-          <Shield className="w-7 h-7 text-accent" />
+      <div className="bg-card rounded-xl border border-border p-6 space-y-3">
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 gradient-hero rounded-xl flex items-center justify-center">
+            <Shield className="w-7 h-7 text-accent" />
+          </div>
+          <div>
+            <p className="text-sm text-muted-foreground">Safety Score (Goose AI)</p>
+            <p className="text-3xl font-extrabold text-accent">{safetyScore}/10</p>
+            {safetyScore >= 8 && <p className="text-xs text-accent">Goose Confidence: High</p>}
+          </div>
         </div>
-        <div>
-          <p className="text-sm text-muted-foreground">Safety Score (Goose AI)</p>
-          <p className="text-3xl font-extrabold text-accent">{safetyScore}/10</p>
-        </div>
+        <GooseExplainDrawer safetyScore={safetyScore} />
       </div>
+
+      <AIPoweredByPanel compact />
 
       {/* NFT Mint */}
       {passed && (
