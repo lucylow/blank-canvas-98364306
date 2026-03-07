@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import { Navigation, Brain, Gem, Map, Award, Vote, FileWarning, User, ArrowRight, Shield, Zap, Globe, Heart, Scale, ChevronDown } from "lucide-react";
 import GooseBadge from "@/components/GooseBadge";
 import ImpactCard from "@/components/ImpactCard";
-import { useState } from "react";
+import AIPoweredByPanel from "@/components/AIPoweredByPanel";
+import NightModeIndicator from "@/components/NightModeIndicator";
+import OnboardingFlow from "@/components/OnboardingFlow";
+import { useState, useEffect } from "react";
 
 const features = [
   { icon: Brain, title: "Goose AI Intelligence", desc: "Analyzes lighting data, crime stats, and community reports to calculate the safest possible route in real-time.", color: "text-primary-light" },
@@ -27,21 +30,32 @@ const stats = [
 
 export default function HomePage() {
   const [problemOpen, setProblemOpen] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("safestep-onboarded")) {
+      setShowOnboarding(true);
+    }
+  }, []);
 
   return (
     <div className="py-12 space-y-20">
+      {/* Onboarding */}
+      {showOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
+
       {/* Hero with Goose AI Status */}
       <div className="container text-center max-w-4xl mx-auto">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center gap-3 mb-6">
           <GooseBadge status="ready" size="md" />
+          <NightModeIndicator />
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 gradient-text leading-tight">
           Your AI Safety Console
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-          Goose AI analyzes lighting, incidents, and community reports to keep your last mile safe.
+          Goose AI analyzes lighting, incidents, and community reports to keep your last mile safe — designed for women and gender-diverse people walking home at night.
         </p>
-        <p className="text-sm text-muted-foreground mb-10 max-w-xl mx-auto">
+        <p className="text-sm text-muted-foreground mb-8 max-w-xl mx-auto">
           Find safe routes, walk with AR guidance, collect NFTs, and help build a safer city — all powered by Goose.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
@@ -58,6 +72,11 @@ export default function HomePage() {
             View Data Sources
           </Link>
         </div>
+      </div>
+
+      {/* AI Powered By Panel */}
+      <div className="container max-w-2xl mx-auto">
+        <AIPoweredByPanel />
       </div>
 
       {/* 4-Line Problem Frame */}
