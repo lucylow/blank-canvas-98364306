@@ -1,6 +1,8 @@
-const Footer = () => {
+import { forwardRef } from "react";
+
+const Footer = forwardRef<HTMLElement>((_props, ref) => {
   return (
-    <footer className="bg-card border-t border-border mt-16">
+    <footer ref={ref} className="bg-card border-t border-border mt-16">
       <div className="container py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
@@ -39,6 +41,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;
