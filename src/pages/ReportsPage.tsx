@@ -110,9 +110,16 @@ export default function ReportsPage() {
             />
           </div>
 
+          <div className="bg-muted/50 rounded-lg border border-border p-3 space-y-1 text-xs text-muted-foreground">
+            <p>• Do not include faces, license plates, or identifying details.</p>
+            <p>• Focus on place conditions (lighting, crowd, visibility).</p>
+            <p className="text-primary-light mt-1">Your report helps other women and gender-diverse commuters choose safer routes.</p>
+          </div>
+
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-accent text-accent-foreground font-semibold text-sm hover:opacity-90 transition-all"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-accent text-accent-foreground font-semibold text-sm hover:opacity-90 transition-all min-h-[48px]"
+            aria-label="Submit your safety report"
           >
             <Send className="w-4 h-4" /> Submit Report
           </button>
