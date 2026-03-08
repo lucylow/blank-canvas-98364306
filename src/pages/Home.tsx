@@ -61,13 +61,15 @@ export default function HomePage() {
         <div className="flex gap-4 justify-center flex-wrap">
           <Link
             to="/map"
-            className="group px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary-light transition-all hover:-translate-y-0.5 flex items-center gap-2"
+            className="group px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary-light transition-all hover:-translate-y-0.5 flex items-center gap-2 min-h-[48px]"
+            aria-label="Find a safe route home using Goose AI"
           >
             <Brain className="w-4 h-4" /> Find Safe Route with Goose <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             to="/data-sources"
-            className="px-8 py-3.5 rounded-full border-2 border-primary text-foreground font-semibold hover:bg-primary/10 transition-all"
+            className="px-8 py-3.5 rounded-full border-2 border-primary text-foreground font-semibold hover:bg-primary/10 transition-all min-h-[48px] flex items-center"
+            aria-label="View evidence and data sources behind Goose AI decisions"
           >
             View Data Sources
           </Link>

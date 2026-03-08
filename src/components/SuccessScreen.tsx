@@ -164,7 +164,8 @@ export default function SuccessScreen({
             <button
               onClick={handleMint}
               disabled={minting}
-              className="w-full py-3.5 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:bg-primary-light transition-all disabled:opacity-50"
+              className="w-full py-3.5 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:bg-primary-light transition-all disabled:opacity-50 min-h-[48px]"
+              aria-label="Mint your Safe Passage NFT on Polygon blockchain"
             >
               <Award className="w-5 h-5" />
               {minting ? "Minting on Polygon..." : "Mint Safe Passage NFT"}

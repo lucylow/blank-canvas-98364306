@@ -40,7 +40,8 @@ function IdleState({ onStart, error }: { onStart: () => void; error: string | nu
           </div>
           <button
             onClick={onStart}
-            className="mt-4 flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:bg-primary-light transition-all mx-auto"
+            className="mt-4 flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:bg-primary-light transition-all mx-auto min-h-[48px]"
+            aria-label="Start safe route analysis with Goose AI"
           >
             <Brain className="w-4 h-4" /> Find Safe Route with Goose
           </button>
@@ -120,13 +121,15 @@ function RoutePreview({ route, onStartWalk, onReset }: { route: SafeRouteRespons
       <div className="flex gap-3 sticky bottom-4 z-20">
         <button
           onClick={onStartWalk}
-          className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-bold text-sm hover:opacity-90 transition-all"
+          className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-bold text-sm hover:opacity-90 transition-all min-h-[48px]"
+          aria-label="Start AR navigation along the safe route"
         >
           <Navigation className="w-4 h-4" /> Start AR Safe Route
         </button>
         <button
           onClick={onReset}
-          className="flex items-center gap-2 px-4 py-3 rounded-full border border-border text-sm text-muted-foreground hover:bg-muted transition-all"
+          className="flex items-center gap-2 px-4 py-3 rounded-full border border-border text-sm text-muted-foreground hover:bg-muted transition-all min-h-[48px]"
+          aria-label="Calculate a new route"
         >
           <RotateCcw className="w-4 h-4" /> New Route
         </button>
