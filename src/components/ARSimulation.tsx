@@ -164,14 +164,16 @@ export default function ARSimulation({ waypoints, onComplete, onCancel }: ARSimu
             <button
               onClick={handleWalk}
               disabled={currentWaypoint >= waypoints.length - 1 && started}
-              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:bg-primary-light transition-all disabled:opacity-50"
+              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:bg-primary-light transition-all disabled:opacity-50 min-h-[48px]"
+              aria-label={!started ? "Start walking the safe route" : `Walk to waypoint ${currentWaypoint + 2}`}
             >
               <Navigation className="w-4 h-4" />
               {!started ? "Start Walking" : currentWaypoint >= waypoints.length - 1 ? "Journey Complete" : `Walk to Waypoint ${currentWaypoint + 2}`}
             </button>
             <button
               onClick={onCancel}
-              className="px-5 py-3 rounded-full border border-border text-sm text-muted-foreground hover:bg-muted transition-all"
+              className="px-5 py-3 rounded-full border border-border text-sm text-muted-foreground hover:bg-muted transition-all min-h-[48px]"
+              aria-label="Cancel navigation and return to route preview"
             >
               Cancel
             </button>
