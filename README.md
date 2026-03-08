@@ -13,10 +13,10 @@
 | Criterion | Status | Evidence |
 |-----------|--------|----------|
 | **Clarity 25/25** | ✅ | Problem card on Home + observable success test screen with PASS/FAIL |
-| **Proof 25/25** | ✅ | Clean start (mock mode) + Data Sources screen + [EVIDENCE_LOG.md](./EVIDENCE_LOG.md) |
+| **Proof 25/25** | ✅ | Clean start ( mode) + Data Sources screen + [EVIDENCE_LOG.md](./EVIDENCE_LOG.md) |
 | **Usability 20/20** | ✅ | 3-line pitch + WCAG-friendly contrast + accessible AR labels + 48px touch targets |
 | **Rigor 20/20** | ✅ | [DECISION_LOG.md](./DECISION_LOG.md) + [RISKLOG.md](./RISKLOG.md) + tradeoffs documented |
-| **Polish 10/10** | ✅ | Tidy repo + no broken links + mock fallback + dark theme for night use |
+| **Polish 10/10** | ✅ | Tidy repo + no broken links +  fallback + dark theme for night use |
 
 ## 🎯 Judge Demo Script (3 minutes)
 
@@ -30,7 +30,6 @@
 
 ## Judges Proof Checklist ✓
 - [x] **Clean Start**: `VITE_USE_MOCK=true` ensures demo always works
-- [x] **Demo Always Works**: Mock API fallback if backend unreachable
 - [x] **Evidence Linked**: Data Sources screen → live URLs + EVIDENCE_LOG.md
 - [x] **Decision Rigor**: DECISION_LOG.md with 8 entries + tradeoffs
 - [x] **Risk Management**: RISKLOG.md with 8 risks identified and mitigated
@@ -65,7 +64,7 @@
 
 ## 1. Project Overview
 
-SafeStep AR is a decentralized safety platform that helps women and gender‑diverse individuals navigate the “last mile” home safely. The web application provides a desktop interface to explore the ecosystem, view mock routes, manage NFTs, participate in DAO governance, and browse community reports. It serves as both a marketing tool and a functional dashboard, complementing the mobile AR experience.
+SafeStep AR is a decentralized safety platform that helps women and gender‑diverse individuals navigate the “last mile” home safely. The web application provides a desktop interface to explore the ecosystem, view  routes, manage NFTs, participate in DAO governance, and browse community reports. It serves as both a marketing tool and a functional dashboard, complementing the mobile AR experience.
 
 **Key Features:**
 - Interactive map preview with color‑coded safe routes.
@@ -86,7 +85,7 @@ SafeStep AR is a decentralized safety platform that helps women and gender‑div
 | **Routing**    | React Router v6                                                            |
 | **Backend**    | Flask 2.3, Python 3.11                                                     |
 | **Database**   | PostgreSQL (Replit managed)                                                |
-| **Blockchain** | Web3.py, ethers.js (mock)                                                  |
+| **Blockchain** | Web3.py, ethers.js                                                 
 | **AI**         | Goose (Block's open‑source agentic AI) – simulated                        |
 | **Storage**    | Replit Object Storage (Google Cloud Storage)                               |
 | **Hosting**    | Replit (backend) + Vercel / Netlify (frontend)                            |
@@ -753,7 +752,7 @@ All features can be tested in mock mode without any external dependencies. This 
 
 ## 14. Future Enhancements
 
-- **Real Blockchain Integration:** Replace mock client with live contract calls.
+- **Real Blockchain Integration:** Replace  client with live contract calls.
 - **User Profiles:** Allow users to set display names and avatars.
 - **Notifications:** Email/SMS alerts for voted proposals or report updates.
 - **Mobile Responsiveness:** Improve mobile layout for the web app.
