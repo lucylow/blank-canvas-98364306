@@ -1,1 +1,4 @@
 project_id = "igldvegnugimxyfigead"
+
+[functions.safe-route]
+verify_jwt = false
